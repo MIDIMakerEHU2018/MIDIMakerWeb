@@ -122,7 +122,7 @@ function midimakerpy(wavfile, instrument) {
   console.log("Ejecutando script python");
   var options = {
     pythonPath: '/usr/bin/python3',
-    scriptPath: './scripts/midimaker',
+    scriptPath: './scripts',
     args: [wavfile, instrument]
   };
 
