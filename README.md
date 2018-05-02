@@ -8,7 +8,7 @@ The MIDIMaker Pyhton library can be found at: (insert link here)
 
 ## Installation
 For this project to work is necessary to have Node.js installed on your device. For further reference on Node.js [click here](https://nodejs.org/en/).
-It is also recommended to install NPM (Node.js Package Manager). For further reference on NPM [click here](https://www.npmjs.com/)
+It is also recommended to install NPM (Node.js Package Manager). For further reference on NPM [click here](https://www.npmjs.com/).
 
 Once Node.js and NPM are both installed, we can proceed with the installation of the libraries needed for this project. All project dependencies are listed on *package.json* file, so the easiest way to install all of them is to execute `npm install` on the project directory.
 
