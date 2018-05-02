@@ -1,0 +1,1 @@
+This folder is where all the MIDI files will be created and kept until the client downloads them

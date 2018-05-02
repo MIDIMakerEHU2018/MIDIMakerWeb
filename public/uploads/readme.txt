@@ -1,0 +1,1 @@
+This folder is where all the files uploaded from the clients will be saved
