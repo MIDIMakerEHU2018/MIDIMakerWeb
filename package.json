@@ -1,0 +1,22 @@
+{
+  "name": "midimaker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "pkm7",
+  "license": "ISC",
+  "dependencies": {
+    "EventEmitter": "^1.0.0",
+    "body-parser": "^1.18.2",
+    "bootstrap": "^4.0.0",
+    "ejs": "^2.5.7",
+    "express": "^4.16.3",
+    "multer": "^1.3.0",
+    "node-fetch": "^2.1.2",
+    "python-shell": "^0.5.0",
+    "swig": "^1.4.2"
+  }
+}

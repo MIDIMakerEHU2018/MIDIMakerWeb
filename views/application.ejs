@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>MIDIMaker</title>
+</head>
+<body>
+  <header>
+    <h1>MIDIMaker</h1>
+  </header>
+  <main>
+    <% if(typeof msg != 'undefined') { %>
+      <div class="alert alert-success" role="alert">
+        <%= msg %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <% } %>
+    <% if(typeof err != 'undefined') { %>
+      <div class="alert alert-danger" role="alert">
+        <%= err %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <% } %>
+    
+    <% if(etapa == 'subir') { %>
+      <div id="subir">
+        <h2>Subir fichero</h2>
+        <form action="/upload" method="POST" enctype="multipart/form-data" style="display: inline">
+          <input type="file" name="MyFile">
+          <button type="submit" class="btn btn-primary">Subir</button>
+        </form>
+      </div>
+    <% } %>
+
+    <% if(etapa == 'traducir') { %>
+      <div id="traducir">
+        <h2>Traducir fichero</h2>
+        <span>Fichero a traducir: <%= file %></span>
+        <h4>Elija el instrumento utilizado en el audio</h4>
+        <span>Aunque no elija un instrumento la aplicación funcionará, pero los resultados serán más 
+          precisos si lo hace</span>
+        <form action="/traduce" method="POST" style="display: block">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="instrumento" value="piano" checked>
+            <label class="form-check-label">
+              Piano
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="instrumento" value="guitarra">
+            <label class="form-check-label">
+              Guitarra
+            </label>
+          </div>
+          <div class="form-check disabled">
+            <input class="form-check-input" type="radio" name="instrumento" value="piano">
+            <label class="form-check-label">
+              Otros
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primary">Traducir a MIDI</button>
+        </form>
+      </div>
+    <% } %>
+    
+    <% if(etapa == 'bajar') { %>
+      <div id="bajar">
+        <h2>Descargar fichero</h2>
+        <span><%= file %></span>
+        <form action="/download" method="GET" style="display: inline">
+          <button type="submit" class="btn btn-primary">Descargar</button>
+        </form>
+        <form action="/download" method="POST" style="display: inline">
+          <button type="submit" class="btn btn-primary">Finalizar</button>
+        </form>
+      </div>
+    <% } %>
+
+    <% if(etapa == 'finalizar') { %>
+      <div id="finalizar">
+        <h2>Gracias por usar nuestra aplicación :)</h2>
+        <form action="/home" method="GET">
+          <button type="submit" class="btn btn-primary">Volver a Inicio</button>
+        </form>
+      </div>
+    <% } %>
+    
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
