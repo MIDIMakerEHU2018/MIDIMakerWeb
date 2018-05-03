@@ -90,7 +90,7 @@ app.post('/upload', function (req, res) {
         res.render('application', {
           msg: 'Fichero subido correctamente',
           etapa: 'traducir',
-          file: upFile.filename
+          file: upFile.originalname
         });  
       }
     }

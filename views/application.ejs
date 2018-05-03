@@ -7,11 +7,21 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/style2.css">
   <title>MIDIMaker</title>
+  <script>
+    function cargando() {
+      document.querySelector("#traducir .formulario").style.display = "none";
+      document.querySelector("#traducir .cargando").style.display = "block";
+      document.querySelector("#traducir").classList.add("spinner");
+    }
+  </script>
 </head>
 <body>
   <div class="bg-image"></div>
   <div class="bg-overlay"></div>
   <header id="header">
+    <div id="logo">
+      <div class="logo"></div>
+    </div>
     <% if(typeof msg != 'undefined') { %>
       <div class="alert alert-success" role="alert">
         <%= msg %>
@@ -28,12 +38,13 @@
         </button>
       </div>
     <% } %>
-    <h1>MIDIMaker</h1>
   </header>
-  <main>
+  <main id="main">
     <% if(etapa == 'subir') { %>
       <div id="subir">
         <h2>Subir fichero</h2>
+        <p>Seleccione el fichero de audio que desea convertir</p>
+        <p>Formatos permitidos: .wav, .mp3, .m4a</p>
         <form action="/upload" method="POST" enctype="multipart/form-data" style="display: inline">
           <input type="file" name="MyFile">
           <button type="submit" class="btn btn-primary">Subir</button>
@@ -44,30 +55,35 @@
     <% if(etapa == 'traducir') { %>
       <div id="traducir">
         <h2>Traducir fichero</h2>
-        <span>Fichero a traducir: <%= file %></span>
-        <h4>Elija el instrumento utilizado en el audio</h4>
-        <form action="/traduce" method="POST" style="display: block">
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="instrumento" value="piano" checked>
-            <label class="form-check-label">
-              Piano
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="instrumento" value="guitarra">
-            <label class="form-check-label">
-              Guitarra
-            </label>
-          </div>
-          <div class="form-check disabled">
-            <input class="form-check-input" type="radio" name="instrumento" value="piano">
-            <label class="form-check-label">
-              Otros
-            </label>
-          </div>
-          <p>NOTA: Aunque no elija el instrumento la aplicación funcionará correctamente, pero será más preciso si elige el instrumento</p>
-          <button type="submit" class="btn btn-primary">Traducir a MIDI</button>
-        </form>
+        <div class="cargando" style="display:none">
+          <span>Espere mientras traducimos el fichero de audio <br> Esto solo llevará unos segundos...</span>
+        </div>
+        <div class="formulario">
+          <p>Fichero a traducir: <%= file %></p>
+          <span>Elija el instrumento utilizado en el audio</span>
+          <form class="radio" action="/traduce" method="POST" style="display: block">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="instrumento" value="piano" checked>
+              <label class="form-check-label">
+                Piano
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="instrumento" value="guitarra">
+              <label class="form-check-label">
+                Guitarra
+              </label>
+            </div>
+            <div class="form-check disabled">
+              <input class="form-check-input" type="radio" name="instrumento" value="piano">
+              <label class="form-check-label">
+                Otros
+              </label>
+            </div>
+            <p>NOTA: Aunque no elija el instrumento la aplicación funcionará correctamente, pero será más preciso si elige el instrumento</p>
+            <button type="submit" onclick="cargando()"class="btn btn-primary">Traducir a MIDI</button>
+          </form>
+        </div>
       </div>
     <% } %>
     
