@@ -80,7 +80,7 @@ app.post('/upload', function (req, res) {
     } else {
       if(req.file == undefined) {
         res.render('application', {
-          err: 'Error: no ha seleccionado ningún fichero',
+          err: 'Error: no se ha seleccionado ningún fichero',
           etapa: 'subir'
         });
       } else {

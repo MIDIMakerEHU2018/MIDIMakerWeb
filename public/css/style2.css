@@ -1,0 +1,134 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size:1rem;
+  font-weight:normal;
+  line-height:1.5;
+  color:#fff;
+  overflow: hidden;
+}
+
+/* Background image */
+.bg-image{
+  background: url('../img/partitura.jpg');
+  background-position: center;
+  background-size: cover;
+  position:absolute;
+  top:0;
+  left:0;
+  height:100vh;
+  width:100vw;
+  z-index:-2;
+}
+
+.bg-overlay{
+  height:100vh;
+  position: absolute;
+  top:0;
+  left:0;
+  width:100vw;
+  z-index:-1;
+  background:#000;
+  opacity:0.5;
+}
+
+/* Text Setting */
+#subir, #traducir, #bajar, #finalizar, #header h1{
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  padding-left:1rem;
+  padding-right:1rem;
+  text-align:center;
+  position: center;
+  margin: 0 7vw 0 7vw;
+}
+
+#showcase .text .image {
+  height: 25vh;
+  width: 60vh;
+  background: url('../img/logo.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 5vh;
+}
+
+#showcase .h1 {
+  height: 15vh;
+  font-size: 3rem;
+  margin-top: 5vh;
+}
+
+#showcase .text p {
+  height: 15vh;
+  font-size: 1rem;
+}
+
+#showcase .text button {
+  height: 15vh;
+  padding: 0 1.5rem;
+  font-size: 1rem;
+  margin-bottom: 10vh;
+  background: #ccc;
+}
+
+#showcase .text button:hover {
+  background: #444;
+  color: #fff;
+}
+
+/* Media Queries tablet */
+@media (min-width: 600px) {
+  #showcase .text h1 {
+    font-size: 6rem;
+    margin-bottom: 5vh;
+  }
+
+  #showcase .text p {
+    height: 15vh;
+    font-size: 1.5rem;
+  }
+
+  #showcase .text button {
+    font-size: 2rem;
+    margin-bottom: 5vh;
+  }
+}
+
+/* Media Queries phone */
+@media (min-width: 768px) {
+  #showcase .text .image {
+    height: 30vh;
+    width: 75vh;
+    margin-top: 5vh;
+  }
+
+  #showcase .text h1 {
+    height: 25vh;
+    font-size: 8rem;
+    margin: 0;
+  }
+
+  #showcase .text p {
+    height: 15vh;
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  #showcase .text button {
+    font-size: 2rem;
+    margin-bottom: 5vh;
+  }
+}
+
+/*
+#showcase .text h1, #showcase .text p, #showcase .text button {
+  border: 1px solid red;
+}
+*/
