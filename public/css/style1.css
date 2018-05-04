@@ -71,7 +71,7 @@ body{
 }
 
 #showcase .text p {
-  height: 15vh;
+  height: 20vh;
   font-size: 1rem;
 }
 
@@ -89,7 +89,7 @@ body{
 }
 
 /* Media Queries tablet */
-@media (min-width: 600px) {
+@media only screen and (min-width: 600px) {
   #showcase .text h1 {
     font-size: 6rem;
     margin-bottom: 5vh;
@@ -106,8 +106,8 @@ body{
   }
 }
 
-/* Media Queries phone */
-@media (min-width: 768px) {
+/* Media Queries desktop */
+@media only screen and (min-width: 768px) {
   #showcase .text .image {
     height: 30vh;
     width: 75vh;
@@ -131,9 +131,3 @@ body{
     margin-bottom: 5vh;
   }
 }
-
-/*
-#showcase .text h1, #showcase .text p, #showcase .text button {
-  border: 1px solid red;
-}
-*/

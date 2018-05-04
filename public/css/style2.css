@@ -6,7 +6,7 @@
 
 body{
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  font-size:1rem;
+  font-size:0.7rem;
   font-weight:normal;
   line-height:1.5;
   color:#000;
@@ -42,11 +42,11 @@ body{
   content: "";
   box-sizing: border-box;
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
-  width: 60px;
-  height: 60px;
-  margin-left: -30px;
+  width: 40px;
+  height: 40px;
+  margin-left: -20px;
   border-radius: 50%;
   border: 5px solid lightgray;
   border-top-color: mediumblue;
@@ -60,22 +60,19 @@ body{
 }
 
 /* Text Setting */
-#subir, #traducir, #bajar, #finalizar, #logo {
-  /* display:flex;
-  flex-direction: column; */
+#subir, #traducir, #bajar, #finalizar, #header #logo {
   align-items:center;
-  padding-left:1rem;
-  padding-right:1rem;
   text-align:center;
   position: center;
-  padding: 2.5vh 2.5vh 2.5vh 2.5vh;
+  padding: 2.5vh 0 2.5vh 0;
   box-sizing: border-box;
-  margin: 0 30vw 0 30vw;
-}
-
-#header .alert{
   margin: 0;
 }
+
+#header .alert {
+  padding: 2.5vh 0 2.5vh 0;
+  margin: 0;
+} 
 
 #logo .logo {
   padding: 2.5vh 2.5vh 2.5vh 2.5vh;
@@ -85,4 +82,18 @@ body{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+/* Media Queries tablet */
+@media only screen and (min-width: 600px) {
+  #subir, #traducir, #bajar, #finalizar, #logo {
+    margin: 0 10vw 0 10vw;
+  }
+}
+
+/* Media Queries desktop */
+@media only screen and (min-width: 768px) {
+  #subir, #traducir, #bajar, #finalizar, #logo {
+    margin: 0 30vw 0 30vw;
+  }
 }
