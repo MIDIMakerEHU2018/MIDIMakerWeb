@@ -56,7 +56,8 @@
       <div id="traducir">
         <h2>Traducir fichero</h2>
         <div class="cargando" style="display:none">
-          <span>Espere mientras traducimos el fichero de audio <br> Esto solo llevará unos segundos...</span>
+          <p>Espere mientras traducimos el fichero de audio</p>
+          <p>El tiempo de espera depende de la duración del audio, pero normalmente solo llevará unos segundos...</p>
         </div>
         <div class="formulario">
           <p>Fichero a traducir: <%= file %></p>
@@ -90,7 +91,8 @@
     <% if(etapa == 'bajar') { %>
       <div id="bajar">
         <h2>Descargar fichero</h2>
-        <span><%= file %></span>
+        <p>Aquí tiene su partitura en formato MIDI:</p>
+        <p><%= file %></p>
         <form action="/download" method="GET" style="display: inline">
           <button type="submit" class="btn btn-primary">Descargar</button>
         </form>
