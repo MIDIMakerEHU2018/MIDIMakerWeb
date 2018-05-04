@@ -61,6 +61,8 @@ body{
 
 /* Text Setting */
 #subir, #traducir, #bajar, #finalizar, #header #logo {
+  display:flex;
+  flex-direction: column;
   align-items:center;
   text-align:center;
   position: center;
@@ -69,9 +71,14 @@ body{
   margin: 0;
 }
 
+#subir p, #traducir, #bajar p, #finalizar p {
+  font-size: 0.9rem;
+}
+
 #header .alert {
-  padding: 2.5vh 0 2.5vh 0;
+  padding: 2.5vh;
   margin: 0;
+  font-size: 0.9rem;
 } 
 
 #logo .logo {
