@@ -1,4 +1,7 @@
 # MIDIMaker-Web
+
+![interfaz web](https://github.com/MIDIMakerEHU2018/MIDIMakerWeb/blob/master/images/interfaz%20web.png)
+
 Este repositorio incluye el código de Node.js para la página web del proyecto MIDIMaker. Esta web permite a los clientes subir un fichero de audio (formatos .wav, .m4a, .mp3 permitidos) y descargar el correspondiente fichero MIDI.
 
 ## Antes de empezar
