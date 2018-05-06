@@ -6,7 +6,7 @@ Esta página web incluye una llamada a una librería de Python propia para la co
 
 La librería MIDIMaker para Python se puede encontrar en: https://github.com/MIDIMakerEHU2018/midimaker.py
 
-## Instalación
+## Instalación y uso
 Para que la página web funcione es necesario tener Node.js instalado en el dispositivo. Para más información sobre como instalar y utilizar Node.js haz click [aquí](https://nodejs.org/en/).
 También es recomendable instalar NPM (Node.js Package Manager) para facilitar la instalación de dependencias. Para más información sobre NPM haz click [aquí](https://www.npmjs.com/).
 
