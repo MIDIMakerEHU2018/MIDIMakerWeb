@@ -3,6 +3,7 @@ Este repositorio incluye el código de Node.js para la página web del proyecto 
 
 ## Antes de empezar
 Esta página web incluye una llamada a una librería de Python propia para la conversión de audio a MIDI. Esta librería es indispensable para que la página funcione, por lo que antes de utilizarlo es necesario instalar la librería en el dispositivo que funcionará como servidor web e incluir el fichero principal *midimaker.py* en el directorio *scripts* de este proyecto.
+
 La librería MIDIMaker para Python se puede encontrar en: https://github.com/MIDIMakerEHU2018/midimaker.py
 
 ## Instalación
