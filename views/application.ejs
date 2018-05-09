@@ -62,22 +62,22 @@
         <div class="formulario">
           <p>Fichero a traducir: <%= file %></p>
           <span>Elija el instrumento utilizado en el audio</span>
-          <form class="checkbox" action="/traduce" method="POST">
+          <form class="radio" action="/traduce" method="POST">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" a name="instrumento" value="piano" checked>
-              <label class="form-check-label">
+              <input class="form-check-input" type="radio" name="instrumento" id="radio1" value="piano" checked>
+              <label class="form-check-label" for="radio1">
                 Piano
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="instrumento" value="guitarra">
-              <label class="form-check-label">
+              <input class="form-check-input" type="radio" name="instrumento" id="radio2" value="guitarra">
+              <label class="form-check-label" for="radio2">
                 Guitarra
               </label>
             </div>
             <div class="form-check disabled">
-              <input class="form-check-input" type="checkbox" name="instrumento" value="piano">
-              <label class="form-check-label">
+              <input class="form-check-input" type="radio" name="instrumento" id="radio3" value="piano">
+              <label class="form-check-label" for="radio3">
                 Otro
               </label>
             </div>
