@@ -29,7 +29,7 @@ const upload = multer({
 // Check File Type
 function checkFileType(file, cb){
   // Allowed ext
-  const filetypes = /wav|mp3|m4a/;
+  const filetypes = /wav|mp3|m4a|aac|ogg|flac/;
   // Check ext
   const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
   // Check mime
