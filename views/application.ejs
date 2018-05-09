@@ -61,25 +61,19 @@
         </div>
         <div class="formulario">
           <p>Fichero a traducir: <%= file %></p>
-          <span>Elija el instrumento utilizado en el audio</span>
-          <form class="checkbox" action="/traduce" method="POST">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" a name="instrumento" value="piano" checked>
-              <label class="form-check-label">
-                Piano
-              </label>
+          <span>Elija el instrumento utilizado en el audio:</span>
+          <form class="radio" action="/traduce" method="POST">
+            <div class="radio-form">
+              <input class="input" type="radio" name="instrumento" id="radio1" value="piano" checked>
+              <label class="label" for="radio1">Piano</label>
             </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="instrumento" value="guitarra">
-              <label class="form-check-label">
-                Guitarra
-              </label>
+            <div class="radio-form">
+              <input class="input" type="radio" name="instrumento" id="radio2" value="guitarra">
+              <label class="label" for="radio2">Guitarra</label>
             </div>
-            <div class="form-check disabled">
-              <input class="form-check-input" type="checkbox" name="instrumento" value="piano">
-              <label class="form-check-label">
-                Otro
-              </label>
+            <div class="radio-form">
+              <input class="input" type="radio" name="instrumento" id="radio3" value="piano">
+              <label class="label" for="radio3">Otro</label>
             </div>
             <p>NOTA: Aunque no elija el instrumento la aplicación funcionará correctamente, pero será más preciso si elige el instrumento</p>
             <button type="submit" onclick="cargando()"class="btn btn-primary">Traducir a MIDI</button>
