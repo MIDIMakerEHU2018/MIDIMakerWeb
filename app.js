@@ -104,9 +104,13 @@ app.post('/traduce', function (req, res) {
   let newFile = path.basename(actualFile.filename, extension) + '.mid';
   actualFile = newFile;
 
-  let instrumento = req.body.instrumento
+  let instrumento = req.body.instrumento;
 
   midimakerpy(oldFile, instrumento);
+  //Comentar la función midimakerpy y descomentar las siguientes líneas para probar la interfaz sin aplicar el algoritmo
+  // setTimeout(function(){
+  //   myEmitter.emit('scriptEnd')
+  // }, 5000);
   
   myEmitter.on('scriptEnd', function() {
     res.render('application', {
